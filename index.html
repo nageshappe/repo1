@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculator</title>
+    <title>Basic Calculator</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/calc.js"></script>
 </head>
+
 <body>
- <div class="container">
-     <div class="box">
-    <div class="display">
-        <input type="text" class="text1" readonly id='t1'>
-        <input type="text" class="text1" readonly  id="d">
+    <div class="container">
+        <div class="box">
+            <div class="display">
+                <input type="text" class="text1" readonly id='t1'>
+                <input type="text" class="text1" readonly id="d">
+            </div>
+            <div class="keys">
+                <p>
+                    <input type="button" class="button fun" value="mrc" onclick='memory_recall()'>
+                    <input type="button" class="button fun" value="m-" onclick='memory_clear()'>
+                    <input type="button" class="button fun" value="m+" onblur='cler("")' onclick='memory_add()  '>
+                    <input type="button" class="button oper" value="/" onblur='cler("")' onclick='disp_oper(this,"/")'>
+                </p>
+                <p>
+                    <input type="button" class="button dig" value="7" onclick='disp("7")'>
+                    <input type="button" class="button dig" value="8" onclick='disp("8")'>
+                    <input type="button" class="button dig" value="9" onclick='disp("9")'>
+                    <input type="button" class="button oper" value="*" onblur='cler("")' onclick='disp_oper(this,"*")'>
+                </p>
+                <p>
+                    <input type="button" class="button dig" value="4" onclick='disp("4")'>
+                    <input type="button" class="button dig" value="5" onclick='disp("5")'>
+                    <input type="button" class="button dig" value="6" onclick='disp("6")'>
+                    <input type="button" class="button oper" value="-" onblur='cler("")' onclick='disp_oper(this,"-")'>
+                </p>
+                <p>
+                    <input type="button" class="button dig" value="1" onclick='disp("1")'>
+                    <input type="button" class="button dig" value="2" onclick='disp("2")'>
+                    <input type="button" class="button dig" value="3" onclick='disp("3")'>
+                    <input type="button" class="button oper" value="+" onblur='cler("")' onclick='disp_oper(this,"+")'>
+                </p>
+                <p>
+                    <input type="button" class="button dig" value="0" onclick='disp("0")'>
+                    <input type="button" class="button dig" value="." onclick='disp(".")'>
+                    <input type="button" class="button dig" value="C" onclick='cler("")'>
+                    <input type="button" class="button eql" value="=" onclick="result()">
+                </p>
+                <p>
+                    <input type="button" class="button oper" value="&Sqrt;" onclick='calc_sqrt()'>
+                    <input type="button" class="button oper" value="x ^2" onclick='calc_sqr()'>
+                    <input type="button" class="button oper" value="1/x" onclick='calc_inv()'>
+                    <input type="button" class="button oper" value="%" onclick="calc_mod()">
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="keys">
-        <p>
-            <input type="button" class="button fun" value="mrc" onclick='memory_recall()'>
-            <input type="button" class="button fun" value="m-" onclick='memory_clear()'>
-            <input type="button" class="button fun" value="m+" onblur='cler("")' onclick='memory_add()  '>
-            <input type="button" class="button oper" value="/" onblur='cler("")' onclick='disp_oper(this,"/")'>
-        </p>
-        <p>
-            <input type="button" class="button dig" value="7" onclick='disp("7")'>
-            <input type="button" class="button dig" value="8" onclick='disp("8")'>
-            <input type="button" class="button dig" value="9" onclick='disp("9")'>
-            <input type="button" class="button oper" value="*" onblur='cler("")' onclick='disp_oper(this,"*")'>
-        </p>
-        <p>
-            <input type="button" class="button dig" value="4" onclick='disp("4")'>
-            <input type="button" class="button dig" value="5" onclick='disp("5")'>
-            <input type="button" class="button dig" value="6" onclick='disp("6")'>
-            <input type="button" class="button oper" value="-" onblur='cler("")' onclick='disp_oper(this,"-")'>
-        </p>
-        <p>
-            <input type="button" class="button dig" value="1" onclick='disp("1")'>
-            <input type="button" class="button dig" value="2" onclick='disp("2")'>
-            <input type="button" class="button dig" value="3" onclick='disp("3")'>
-            <input type="button" class="button oper" value="+" onblur='cler("")' onclick='disp_oper(this,"+")'>
-        </p>
-        <p>
-            <input type="button" class="button dig" value="0" onclick='disp("0")'>
-            <input type="button" class="button dig" value="." onclick='disp(".")'>
-            <input type="button" class="button dig" value="C" onclick='cler("")'>
-            <input type="button" class="button eql" value="=" onclick="result()">
-        </p>
-        <p>
-                <input type="button" class="button oper" value="&Sqrt;" onclick='calc_sqrt()'>
-                <input type="button" class="button oper" value="x ^2"  onclick='calc_sqr()'>
-                <input type="button" class="button oper" value="1/x" onclick='calc_inv()'>
-                <input type="button" class="button oper" value="%" onclick="calc_mod()">
-        </p>
-    </div>
-    </div>
-</div>
 </body>
+
 </html>
